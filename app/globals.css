@@ -1,8 +1,13 @@
 @import "tailwindcss";
+@import "leaflet/dist/leaflet.css";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f8fafc; /* soft slate-50 */
+  --foreground: #0f172a; /* slate-900 */
+  --accent: #14b8a6;     /* teal-500 */
+  --accent-muted: #99f6e4; /* teal-200 */
+  --card: #ffffff;
+  --border: rgba(15, 23, 42, 0.08);
 }
 
 @theme inline {
@@ -12,10 +17,15 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* keep dark mode pleasant if user prefers */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0b1220; /* slate-950 */
+    --foreground: #e2e8f0; /* slate-200 */
+    --accent: #2dd4bf;     /* teal-400 */
+    --accent-muted: #134e4a; /* teal-900 */
+    --card: #0f172a;
+    --border: rgba(226, 232, 240, 0.12);
   }
 }
 
@@ -23,4 +33,20 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+}
+
+.pill {
+  background: var(--accent);
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
