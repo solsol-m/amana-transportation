@@ -76,16 +76,16 @@ export default function FiltersPanel({
       </div>
       <div className="flex items-center gap-2">
         <button
-          className={`px-3 py-2 rounded-lg text-sm ${filters.tile === "osm" ? "pill" : "card"}`}
+          className={`px-3 py-2 rounded-lg text-sm hover-scale ${filters.tile === "osm" ? "pill" : "card"}`}
           onClick={() => update("tile", "osm")}
         >خريطة عادية</button>
         <button
-          className={`px-3 py-2 rounded-lg text-sm ${filters.tile === "sat" ? "pill" : "card"}`}
+          className={`px-3 py-2 rounded-lg text-sm hover-scale ${filters.tile === "sat" ? "pill" : "card"}`}
           onClick={() => update("tile", "sat")}
         >قمر صناعي</button>
         <span className="text-sm opacity-70 ml-2">النتائج: {filteredCount}</span>
         <button
-          className="px-3 py-2 rounded-lg text-sm card"
+          className="px-3 py-2 rounded-lg text-sm card hover-scale"
           onClick={() => {
             const next: Filters = { ...filters, status: null, route: null };
             setFilters(next);

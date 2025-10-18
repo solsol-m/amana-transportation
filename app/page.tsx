@@ -143,7 +143,7 @@ export default async function Home() {
         <h2 className="text-xl font-semibold mb-3">صحة الأسطول</h2>
         <div className="grid gap-3 md:grid-cols-3">
           {bus_lines.slice(0, 6).map((bus) => (
-            <div key={bus.id} className="rounded-xl card p-4 flex flex-col gap-2">
+            <div key={bus.id} className="rounded-xl card p-4 flex flex-col gap-2 hover-lift">
               <div className="flex items-center justify-between">
                 <div className="font-medium">{bus.name}</div>
                 <StatusBadge status={bus.status} />
@@ -173,7 +173,7 @@ export default async function Home() {
 
 function StatCard({ title, value, icon }: { title: string; value: number; icon?: React.ReactNode }) {
   return (
-    <div className="rounded-xl card p-4 flex items-center gap-3">
+    <div className="rounded-xl card p-4 flex items-center gap-3 hover-lift">
       {icon}
       <div>
         <div className="text-sm opacity-70 mb-1">{title}</div>
@@ -185,7 +185,7 @@ function StatCard({ title, value, icon }: { title: string; value: number; icon?:
 
 function BusCard({ bus }: { bus: Bus }) {
   return (
-    <div className="rounded-2xl card p-5 flex flex-col gap-4">
+    <div className="rounded-2xl card p-5 flex flex-col gap-4 hover-lift">
       <div className="flex items-center justify-between gap-3">
         <div>
           <h3 className="text-xl font-semibold">{bus.name}</h3>
