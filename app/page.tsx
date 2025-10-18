@@ -81,7 +81,7 @@ import { headers } from "next/headers";
 
 async function fetchData(): Promise<ApiResponse> {
   // Build absolute URL for server-side fetch to internal route
-  const h = headers();
+  const h = await headers();
   const host = h.get("host");
   const proto = h.get("x-forwarded-proto") ?? "http";
   const origin = host ? `${proto}://${host}` : "";
